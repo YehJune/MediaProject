@@ -11,18 +11,18 @@ import com.yejin.mediaproject.persistence.UserDAO;
 public class UserDAOTest {
 	@Autowired
 	private UserDAO userDAO;
-	
+
 	@Test
 	void getUserListTest() {
 		User user = new User();
 		user.setUsername("test");
 		user.setPassword("test123");
 		user.setEmail("test@gmail.com");
-		
+
 		int before = userDAO.getUserList().size();
 		userDAO.insertUser(user);
 		int after = userDAO.getUserList().size();
-		
+
 		assertEquals(before + 1, after);
 	}
 }
