@@ -15,7 +15,7 @@ public class UserDAOTest {
 	@Test
 	void getUserListTest() {
 		User user = new User();
-		user.setUsername("test2");
+		user.setUsername("test3");
 		user.setPassword("test123");
 		user.setEmail("test@gmail.com");
 
@@ -25,4 +25,5 @@ public class UserDAOTest {
 
 		assertEquals(before + 1, after);
 	}
+	
 }
