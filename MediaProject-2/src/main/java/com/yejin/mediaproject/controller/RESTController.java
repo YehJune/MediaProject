@@ -9,7 +9,7 @@ import com.yejin.mediaproject.domain.User;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@RestController
+//@RestController
 public class RESTController {
 	//GET: SELECT
 	@GetMapping("/mediaproject")

@@ -7,3 +7,4 @@ public class MediaProjectException extends RuntimeException{
 		super(message);
 	}
 }
+ 

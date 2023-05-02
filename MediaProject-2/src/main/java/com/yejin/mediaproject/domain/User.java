@@ -76,7 +76,7 @@ public class User {
 	private String score;		//평점
 	
 	@Column(length = 50)
-	private String recommand;		//추천
+	private String recommend;		//추천
 
 
 }
