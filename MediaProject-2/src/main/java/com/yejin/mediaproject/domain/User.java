@@ -44,4 +44,39 @@ public class User {
 	
 	@CreationTimestamp // 현재 시간이 기본값으로 등록되도록 설정
 	private Timestamp createDate;
+	
+	@Column(length = 50)
+	private String name;		//이름
+	
+	@Column(length = 50)
+	private String mobile;		//전화번호
+	
+	@Column(length = 100)
+	private String addr;		//주소
+	
+	@Column(length = 50)
+	private String busNum;		//사업자번호
+	
+	@Column(length = 50)
+	private String farmName;		//농장이름
+
+	@Column(length = 50)
+	private String region;		//지역
+	
+	@Column(length = 50)
+	private String story;		//이야기
+	
+	@Column(length = 50)
+	private String profileImg;		//프로필이미지url
+	
+	@Column(length = 50)
+	private String revNum;		//리뷰수
+	
+	@Column(length = 50)
+	private String score;		//평점
+	
+	@Column(length = 50)
+	private String recommand;		//추천
+
+
 }
