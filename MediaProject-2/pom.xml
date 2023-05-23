@@ -14,7 +14,6 @@
 	<name>MediaProject-2</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -69,7 +68,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				        <version>3.1.0</version>
 
 				<configuration>
 					<excludes>
