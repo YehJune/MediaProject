@@ -12,7 +12,6 @@
 	<artifactId>MediaProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>MediaProject-2</name>
-	<packaging>war</packaging>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 	</properties>
@@ -65,7 +64,6 @@
 	</dependencies>
 
 	<build>
-		<finalName>MediaProject-2</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
