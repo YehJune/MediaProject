@@ -111,7 +111,7 @@ public class UserController {
 		
 		if(findUser.getUsername() == null) {
 			userService.insertUser(user);
-			return new ResponseDTO<>(HttpStatus.OK.value(),user.getUsername() + "가입 성공스.");
+			return new ResponseDTO<>(HttpStatus.OK.value(),user.getUsername() + "가입 성공했습니다.");
 		}else {
 			return new ResponseDTO<>(HttpStatus.BAD_REQUEST.value(),
 					user.getUsername() + "님은 이미 회원입니다.");

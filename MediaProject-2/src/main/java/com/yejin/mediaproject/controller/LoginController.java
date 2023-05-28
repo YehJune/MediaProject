@@ -25,7 +25,7 @@ public class LoginController {
 		//검색 결과 유무와 사용자가 입력한 비밀번호가 유효한지 확인
 		if(findUser.getUsername() == null) {
 			return new ResponseDTO<>(HttpStatus.BAD_REQUEST.value(),
-					"없는 ");
+					"없는 아이디입니다.");
 		}else {
 			if(user.getPassword().equals(findUser.getPassword())) {
 				//로그인 성공 시 세션에 사용자 정보 저장
