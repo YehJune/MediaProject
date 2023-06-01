@@ -46,12 +46,8 @@ public class SellerController {
 	}
 	
 	@GetMapping("/seller/list")
-	public @ResponseBody Page<Seller> getUserListPaging(
-			@PageableDefault( size = 10, direction = Sort.Direction.DESC,
-			sort = {"id", "username"})Pageable pageable){
-		//page에 해당하는 2개의 데이터 조희
-		//id 내림차순 정렬
-		return sellerRepository.findAll(pageable);
+	public @ResponseBody List<Seller> getSellerList(){
+		return sellerRepository.findAll();
 	}
 	
 }
