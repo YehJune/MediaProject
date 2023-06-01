@@ -54,29 +54,5 @@ public class User {
 	@Column(length = 100)
 	private String addr;		//주소
 	
-	@Column(length = 50)
-	private String busNum;		//사업자번호
-	
-	@Column(length = 50)
-	private String farmName;		//농장이름
-
-	@Column(length = 50)
-	private String region;		//지역
-	
-	@Column(length = 50)
-	private String story;		//이야기
-	
-	@Column(length = 50)
-	private String profileImg;		//프로필이미지url
-	
-	@Column(length = 50)
-	private String revNum;		//리뷰수
-	
-	@Column(length = 50)
-	private String score;		//평점
-	
-	@Column(length = 50)
-	private String recommend;		//추천
-
 
 }
