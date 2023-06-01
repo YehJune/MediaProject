@@ -31,8 +31,8 @@ import com.yejin.mediaproject.service.UserService;
 
 @Controller
 public class UserController {
-//	@Autowired
-//	private UserRepository userRepository;
+	@Autowired
+	private UserRepository userRepository;
 //	
 //	@PostMapping("/user")
 //	public @ResponseBody String insertUser(@RequestBody User user) {
@@ -83,11 +83,11 @@ public class UserController {
 //		userRepository.deleteById(id);
 //		return "회원 삭제 성공";
 //	}
-//	
-//	@GetMapping("/user/list")
-//	public @ResponseBody List<User> getUserList(){
-//		return userRepository.findAll();
-//	}
+	
+	@GetMapping("/user/list")
+	public @ResponseBody List<User> getUserList(){
+		return userRepository.findAll();
+	}
 //	
 //	@GetMapping("/user/page")
 //	public @ResponseBody Page<User> getUserListPaging(

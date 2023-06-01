@@ -1,6 +1,8 @@
 package com.yejin.mediaproject.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.yejin.mediaproject.domain.RoleType;
@@ -34,7 +36,7 @@ public class SellerService {
 	}
 	
 	@Transactional(readOnly = true)
-	public List<Seller> getSellerList(){
-		return sellerRepository.findAll();
+	public Page<Seller> getSellerList(Pageable pageable){
+		return sellerRepository.findAll(pageable);
 	}
 }

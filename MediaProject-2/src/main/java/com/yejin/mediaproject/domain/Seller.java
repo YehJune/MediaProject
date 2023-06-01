@@ -38,7 +38,7 @@ public class Seller {
 		@Column(length = 50)
 		private String mobile;		//전화번호
 		
-		@Column(length = 100)
+		@Column
 		private String addr;		//주소
 		
 		@Column(length = 50)
@@ -50,20 +50,20 @@ public class Seller {
 		@Column(length = 50)
 		private String region;		//지역
 		
-		@Column(length = 200)
+		@Column
 		private String story;		//이야기
 		
-		@Column(length = 200)
+		@Column
 		private String profileImg;		//프로필이미지url
 		
 		@Column(length = 50)
-		private String revNum;		//리뷰수
+		private Integer revNum;		//리뷰수
 		
 		@Column(length = 50)
-		private String score;		//평점
+		private Double score;		//평점
 		
 		@Column(length = 50)
-		private String recommend;		//추천
+		private Integer recommend;		//추천
 	
 	
 }
