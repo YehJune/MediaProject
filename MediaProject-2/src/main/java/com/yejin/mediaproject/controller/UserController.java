@@ -4,7 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.yejin.mediaproject.domain.User;
+import com.yejin.mediaproject.domain.Item;
 import com.yejin.mediaproject.domain.RoleType;
+import com.yejin.mediaproject.domain.Seller;
 import com.yejin.mediaproject.persistence.UserRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -117,5 +119,16 @@ public class UserController {
 					user.getUsername() + "님은 이미 회원입니다.");
 		}
 	
+	}
+	
+	@GetMapping("/user/{username}")
+	public @ResponseBody User getbyUsername(@PathVariable String username) {
+		
+		//검색된 사용자가 없을 경우 예외 반환
+		User findUser = userRepository.findByUsername(username).orElseThrow(()->{
+			return new MediaProjectException("해당 사용자가 없습니다.");
+		});
+		 
+		return findUser;
 	}
 }

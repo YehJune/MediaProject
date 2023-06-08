@@ -1,6 +1,7 @@
 package com.yejin.mediaproject.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -11,6 +12,8 @@ import org.springframework.http.HttpStatus;
 
 import com.yejin.mediaproject.domain.User;
 import com.yejin.mediaproject.dto.ResponseDTO;
+import com.yejin.mediaproject.exception.MediaProjectException;
+import com.yejin.mediaproject.persistence.UserRepository;
 import com.yejin.mediaproject.service.UserService;
 
 //@CrossOrigin("*")
@@ -18,6 +21,8 @@ import com.yejin.mediaproject.service.UserService;
 public class LoginController {
 	@Autowired
 	private UserService userService;
+	private UserRepository userRepository;
+
 	
 	@PostMapping("/auth/login")
 	public @ResponseBody ResponseDTO<?> login(@RequestBody User user, HttpSession session){
@@ -31,13 +36,15 @@ public class LoginController {
 				//로그인 성공 시 세션에 사용자 정보 저장
 				session.setAttribute("principal", findUser);
 				return new ResponseDTO<>(HttpStatus.OK.value(),
-						findUser.getUsername() + " 로그인 성공");
+						findUser);
+//						.getUsername() + " 로그인 성공");
 			}else {
 				return new ResponseDTO<>(HttpStatus.BAD_REQUEST.value(), "비밀번호 오류");
 			}
 		}
 	}
 	
+
 //	@GetMapping("/auth/login")
 //	public String login() {
 //		return "system/login";

@@ -25,6 +25,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+
+import com.yejin.mediaproject.domain.Item;
 import com.yejin.mediaproject.domain.Seller;
 import com.yejin.mediaproject.dto.ResponseDTO;
 import com.yejin.mediaproject.service.SellerService;
@@ -48,6 +50,17 @@ public class SellerController {
 	@GetMapping("/seller/list")
 	public @ResponseBody List<Seller> getSellerList(){
 		return sellerRepository.findAll();
+	}
+	
+	@GetMapping("/seller/{username}")
+	public @ResponseBody Seller getbyUsername(@PathVariable String username) {
+		
+		//검색된 판매자가 없을 경우 예외 반환
+		Seller findSeller = sellerRepository.findByUsername(username).orElseThrow(()->{
+			return new MediaProjectException("해당 판매자가 없습니다.");
+		});
+		 
+		return findSeller;
 	}
 	
 }

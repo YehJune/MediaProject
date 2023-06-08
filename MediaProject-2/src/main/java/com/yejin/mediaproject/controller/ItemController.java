@@ -63,6 +63,15 @@ public class ItemController {
 		return itemRepository.findAll();
 	}
 	
+	@GetMapping("/item/{id}")
+	public @ResponseBody Item getbyId(@PathVariable Integer id) {
+		
+		//검색된 상품이 없을 경우 예외 반환
+		Item findItem = itemRepository.findById(id).orElseThrow(()->{
+			return new MediaProjectException("해당 상품이 없습니다.");
+		});
+		return findItem;
+	}
 	
 	
 	
