@@ -121,11 +121,11 @@ public class UserController {
 	
 	}
 	
-	@GetMapping("/user/{username}")
-	public @ResponseBody User getbyUsername(@PathVariable String username) {
+	@GetMapping("/user/{id}")
+	public @ResponseBody User getbyId(@PathVariable Integer id) {
 		
 		//검색된 사용자가 없을 경우 예외 반환
-		User findUser = userRepository.findByUsername(username).orElseThrow(()->{
+		User findUser = userRepository.findById(id).orElseThrow(()->{
 			return new MediaProjectException("해당 사용자가 없습니다.");
 		});
 		 

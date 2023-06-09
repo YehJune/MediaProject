@@ -42,12 +42,6 @@ public class ItemController {
 //	}
 //
 	
-	
-	
-	
-	
-	
-	
 	@GetMapping("/item/list/{sellerusername}")
 	public @ResponseBody List<Item> getItemListbySellerUsername(@PathVariable String sellerusername) {
 		
@@ -72,12 +66,6 @@ public class ItemController {
 		});
 		return findItem;
 	}
-	
-	
-	
-	
-	
-	
 	
 //	
 //	@Transactional

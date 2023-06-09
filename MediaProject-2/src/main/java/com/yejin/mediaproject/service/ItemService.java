@@ -21,7 +21,7 @@ public class ItemService {
 	private ItemRepository itemRepository;
 	
 	@Transactional(readOnly = true)
-	public List<Item> getItem(String sellerusername) {
+	public List<Item> getItemListbySellerUsername(String sellerusername) {
 		//검색 결과가 없을 때 빈 User 객체 반환
 		List<Item> findUser = itemRepository.findBySellerUsername(sellerusername).orElseGet(
 				new Supplier<List<Item>>() {

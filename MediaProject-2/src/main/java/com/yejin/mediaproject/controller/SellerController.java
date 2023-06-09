@@ -52,11 +52,11 @@ public class SellerController {
 		return sellerRepository.findAll();
 	}
 	
-	@GetMapping("/seller/{username}")
-	public @ResponseBody Seller getbyUsername(@PathVariable String username) {
+	@GetMapping("/seller/{id}")
+	public @ResponseBody Seller getbyId(@PathVariable Integer id) {
 		
 		//검색된 판매자가 없을 경우 예외 반환
-		Seller findSeller = sellerRepository.findByUsername(username).orElseThrow(()->{
+		Seller findSeller = sellerRepository.findById(id).orElseThrow(()->{
 			return new MediaProjectException("해당 판매자가 없습니다.");
 		});
 		 

@@ -23,9 +23,9 @@ public class SellerService {
 	}
 	
 	@Transactional(readOnly = true)
-	public Seller getSeller(String username) {
+	public Seller getSeller(Integer id) {
 		//검색 결과가 없을 때 빈 Seller 객체 반환
-		Seller findSeller = sellerRepository.findByUsername(username).orElseGet(
+		Seller findSeller = sellerRepository.findById(id).orElseGet(
 				new Supplier<Seller>() {
 					@Override
 					public Seller get() {
